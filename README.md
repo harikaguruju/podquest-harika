@@ -1,11 +1,13 @@
 # podquest-harika
-PodQuest Agents – Multi-Agent Audio Intelligence for Podcast Search
 Problem Statement
+
+Long podcast episodes contain valuable insights, but users can’t quickly locate where a topic is discussed. Manual scrubbing is slow and error-prone. We need a system that makes podcasts semantically searchable and returns timestamped evidence across episodes.
 
 Long podcasts are hard to navigate. Users need to find where a topic was discussed, with evidence (timestamps). Manual scrubbing is slow and inaccurate.
 
 Why Multi-Agent
 
+The pipeline is naturally modular: ingesting audio, transcribing, chunking, embedding, indexing, retrieval, and quality checks are distinct expert roles. Specialized agents working in parallel improve speed, reliability, and maintainability. A supervisor coordinates them, retries failures, and enforces quality (e.g., “include timestamps” guardrails).
 The pipeline (ingest → transcription → chunking → indexing → retrieval → QA) maps naturally to specialized agents. Multi-agent orchestration improves speed (parallel steps), quality (specialists), and reliability (supervisor & guardrails).
 
 Application
@@ -26,7 +28,7 @@ Retrieval/Q&A → semantic search + extractive response
 
 Evaluation/Guardrails → verify timestamps and citation to transcripts
 
-Tech
+Technologies used
 
 Python, Streamlit, Faster-Whisper, Sentence-Transformers, ChromaDB, CrewAI (or LangGraph), pydub/ffmpeg, numpy/pandas
 
